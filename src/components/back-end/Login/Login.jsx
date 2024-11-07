@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Button } from '../index'
 import { useForm } from "react-hook-form";
 import service from "../../../appwrite/auth";
@@ -14,6 +14,28 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+
+  async function getUser() {
+    setLoading(true)
+    try {
+      const session = await service.getCurrentUser();
+      if (session) {
+        dispatch(login(session));
+        navigate('/admin')
+      } else {
+        dispatch(logout());
+      }
+    } catch (error) {
+      dispatch(logout());
+    } finally{
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  }, []);
+  
 
   const submit = async (data) => {
     setLoading(true)

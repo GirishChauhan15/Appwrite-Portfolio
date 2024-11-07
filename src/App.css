@@ -4,7 +4,6 @@
 :root {
   --text: white;
   --bg1: linear-gradient(rgb(0, 0, 0), #1e0723, #210a3e, black);
-  --divBg: linear-gradient(108deg, #2b0a4b, #3a1a7d, #4e2b8d, #3d1a6f, #2a0d43);
   --divBg: linear-gradient(108deg,
       #130428,
       #3f1876,
