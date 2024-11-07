@@ -1,0 +1,189 @@
+.contact_me {
+    width: 85%;
+    flex-direction: column;
+}
+
+
+.contact_me_one {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact_me_title {
+    text-align: center;
+    margin: 1em 0;
+    font-size: 1.5rem;
+}
+
+.contact_me_content {
+    font-size: .8rem;
+    margin-bottom: 2em;
+}
+
+
+
+.contact_me_two {
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.contact_inputs {
+    font-style: italic;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1rem;
+    color: var(--text);
+    border: none;
+    outline: none;
+    padding: 0.4em 0;
+    border-bottom: 3px solid var(--text);
+}
+
+.contact_inputs+.contact_inputs {
+    margin-top: 0.7em;
+}
+
+.contact_me_two textarea {
+    padding-top: 1em;
+    margin-bottom: 1em;
+}
+
+.contact_inputs:focus {
+    border-bottom: 3px solid var(--bg);
+    font-style: normal;
+}
+
+.contact_inputs::placeholder {
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: bolder;
+}
+
+.contact_me_two button {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 6rem;
+    padding: 1em 1.2em;
+    font-size: 0.9rem;
+    border: 3px solid var(--text);
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--text);
+    font-weight: bolder;
+}
+
+.contact_me_two button:hover,
+.contact_me_two button:focus {
+    color: var(--text);
+    background-color: var(--projBtnHover);
+    transition: background-color 0.2s linear;
+}
+
+@media (min-width: 600px) {
+    .contact_me {
+        padding: 2em 0;
+        flex-direction: row;
+    }
+
+    .contact_me_one {
+        width: 45%;
+        margin: unset;
+    }
+
+    .contact_me_title {
+        font-size: 2rem;
+        text-align: left;
+        margin-top: 0;
+    }
+
+
+    .contact_me_content {
+        font-size: 1.5rem;
+        margin-bottom: unset;
+    }
+
+
+
+    .contact_me_two {
+        width: 60%;
+        margin: unset;
+    }
+
+    .contact_inputs {
+        font-size: 1.5rem;
+        padding: 0.5em 0;
+        border-width: 5px;
+    }
+
+    .contact_inputs+.contact_inputs {
+        margin-top: 1em;
+    }
+
+    .contact_inputs:focus {
+        border-width: 5px;
+    }
+
+    .contact_inputs::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .contact_me_two button {
+        width: 10rem;
+        font-size: 1.1rem;
+        border-width: 5px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .contact_me {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
+
+    .contact_me_one {
+        width: 50%;
+        margin: unset;
+    }
+
+    .contact_me_content {
+        font-size: 2rem;
+    }
+
+    .contact_me_title {
+        font-size: 3rem;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .contact_me_two {
+        width: 60%;
+    }
+
+    .contact_inputs {
+        font-size: 2rem;
+        border-width: 8px;
+    }
+
+    .contact_inputs+.contact_inputs {
+        margin-top: 1.5em;
+    }
+
+    .contact_inputs:focus {
+        border-width: 8px;
+    }
+
+    .contact_inputs::placeholder {
+        font-size: 1.8rem;
+    }
+
+    .contact_me_two button {
+        width: 15rem;
+        border-radius: 100px;
+        font-size: 1.7rem;
+        border-width: 8px;
+    }
+}

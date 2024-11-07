@@ -1,0 +1,96 @@
+.wrapper {
+    position: relative;
+    background-color: #383838;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 0.3rem;
+}
+
+.img_container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.skill_image {
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    margin-bottom: 1em;
+}
+
+.btns {
+    position: absolute;
+    gap: 1em;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .8rem;
+}
+
+.edit {
+    background-color: royalblue;
+    padding: .2em .5em;
+    border-radius: 0.3rem;
+}
+
+.edit:hover,
+.edit:focus {
+    background-color: rgb(50, 77, 156);
+}
+
+.delete {
+    background-color: red;
+    padding: .2em .5em;
+    border-radius: 0.3rem;
+
+}
+
+.delete:hover,
+.delete:focus {
+    background-color: rgb(190, 23, 23);
+}
+
+.info {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.exp {
+    margin-bottom: 1em;
+}
+
+.error {
+    color: red;
+    font-size: .8rem;
+}
+
+@media (min-width: 600px) {
+    .wrapper {
+        width: 60%;
+        font-size: 1.3rem;
+    }
+    
+    .btns {
+        gap: 1.5em;
+        padding: 1.2em;
+        font-size: 1.1rem;
+    }
+
+    .error {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .wrapper {
+        width: 50%;
+        font-size: 1.5rem;
+    }
+
+    .error {
+        font-size: 1.1rem;
+    }
+
+}

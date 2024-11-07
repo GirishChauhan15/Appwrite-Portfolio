@@ -1,0 +1,84 @@
+import React, { useEffect, useState } from "react";
+import service from "../../../appwrite/config";
+import { images } from "../../../conf/images";
+import { Link } from "react-router-dom";
+import styles from './Projects.module.css'
+
+function Projects() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [errors, setErrors] = useState("");
+
+  const fetchProjects = async () => {
+    try {
+      setErrors("");
+      const project = await service.getProjects();
+      if (project?.documents?.length === 0) {
+        throw new Error('No project data available.')
+      } else {
+        setPosts(project.documents);
+      }
+    } catch (error) {
+      setErrors(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  return (
+    <section className={`${styles.projects} container`}>
+      <div className={`${styles.projects_one} row`}>
+        <h3 className={styles.projects_title}>Projects</h3>
+        <a href="#contact" className={styles.projects_btn}>
+          Contact Me
+        </a>
+      </div>
+      {loading && (
+        <img className="loading_gif" src={images.loader} alt="Loading..." />
+      )}
+      {errors && <p className="error">{errors}</p>}
+
+      {posts?.length > 0 && (
+        <div className={styles.projects_two}>
+          {posts?.map((post) => (
+            <div key={post.$id} className={styles.project}>
+              <div>
+                <img
+                  className={styles.project_two_img}
+                  src={service.getFilePreview(post.image)}
+                  alt={post.title}
+                />
+              </div>
+              <div>
+                <h4 className={styles.project_two_title}>{post.title}</h4>
+                <p className={styles.project_two_content}>{post.content}</p>
+                <div className={`${styles.project_btns} ${styles.row_project}`}>
+                  <Link
+                    target="_blank"
+                    to={post.viewProject}
+                    className={styles.project_two_btn}
+                  >
+                    View project
+                  </Link>
+                  <Link
+                    target="_blank"
+                    to={post.viewCode}
+                    className={styles.project_two_btn}
+                  >
+                    view code
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+export default Projects;

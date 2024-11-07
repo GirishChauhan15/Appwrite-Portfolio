@@ -1,0 +1,9 @@
+.wrapper {
+    background-color: rgb(23, 23, 23);
+    min-height: 100vh;
+}
+.spacing {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em 0 3em;
+}
