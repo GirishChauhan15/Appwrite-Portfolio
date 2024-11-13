@@ -14,8 +14,14 @@ function AllProjects() {
     try {
       const projectInfo = await service.getProjects();
       if (projectInfo?.documents.length > 0) {
-        setProjects(projectInfo.documents);
+        const info = projectInfo.documents?.sort(
+          (a, b) =>
+            Number(String(b.$id).substring(b.$id.length - 1, b.$id.length)) -
+            Number(String(a.$id).substring(a.$id.length - 1, a.$id.length))
+        );
+        setProjects(info);
       } else {
+        setProjects([]);
         throw new Error("No project data available.");
       }
     } catch (error) {
