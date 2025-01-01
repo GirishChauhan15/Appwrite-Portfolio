@@ -63,20 +63,23 @@ function Projects() {
                 <h4 className={styles.project_two_title}>{post.title}</h4>
                 <p className={styles.project_two_content}>{post.content}</p>
                 <div className={`${styles.project_btns} ${styles.row_project}`}>
-                  <Link
+                  {post?.viewProject === 'false' && <button className={styles.project_two_btn} style={{cursor:"not-allowed", backgroundColor:"#313131"}} disabled>View project</button>}
+                  {post?.viewProject !== 'false' && <Link
                     target="_blank"
                     to={post.viewProject}
                     className={styles.project_two_btn}
                   >
                     View project
-                  </Link>
-                  <Link
+                  </Link>}
+
+                  {post?.viewCode === 'false' && <button className={styles.project_two_btn} style={{cursor:"not-allowed", backgroundColor:"#313131"}} disabled>View code</button> }
+                  {post?.viewCode !== 'false' && <Link
                     target="_blank"
                     to={post.viewCode}
                     className={styles.project_two_btn}
                   >
-                    view code
-                  </Link>
+                    View code
+                  </Link>}
                 </div>
               </div>
             </div>

@@ -77,20 +77,22 @@ function Project() {
             <h4 className={styles.title}>{projects.title}</h4>
             <p className={styles.content}>{projects.content}</p>
             <div className={styles.row}>
-              <Link
+            {projects?.viewProject === 'false' && <button className={styles.view_btn} style={{cursor:"not-allowed", backgroundColor:"#313131"}} disabled>View project</button>}
+            {projects?.viewProject !== 'false' && <Link
                 target="_blank"
                 to={projects.viewProject}
                 className={styles.view_btn}
               >
                 View project
-              </Link>
-              <Link
+              </Link> }
+              {projects?.viewCode === 'false' && <button className={styles.view_btn} style={{cursor:"not-allowed", backgroundColor:"#313131"}} disabled>View code</button>}
+              {projects?.viewCode !== 'false' && <Link
                 target="_blank"
                 to={projects.viewCode}
                 className={styles.view_btn}
               >
-                view code
-              </Link>
+                View code
+              </Link> }
             </div>
           </div>
         </div>

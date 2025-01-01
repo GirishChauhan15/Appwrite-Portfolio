@@ -89,6 +89,7 @@ function Form({ project }) {
           label={"Project Id:"}
           className={styles.inputBox}
           type="text"
+          placeholder="project-id-`Number`"
           {...register("slug", { required: true })}
         />
         <Input
@@ -116,12 +117,14 @@ function Form({ project }) {
           label={"Preview Project:"}
           className={styles.inputBox}
           type="text"
+          placeholder="No url use `false`"
           {...register("viewProject", { required: true })}
         />
         <Input
           label={"View Code:"}
           className={styles.inputBox}
           type="text"
+          placeholder="No url use `false`"
           {...register("viewCode", { required: true })}
         />
         {errors && <p className={styles.error}>{errors}</p>}
