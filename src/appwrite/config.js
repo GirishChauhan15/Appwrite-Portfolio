@@ -112,7 +112,7 @@ export class Service {
   }
   getFilePreview(image) {
     try {
-      return this.storage.getFilePreview(
+      return this.storage.getFileView(
         conf.appwriteStorageId,
         image
       )
