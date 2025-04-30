@@ -38,11 +38,11 @@ function Hero() {
       </div>
       <section className={`${styles.hero} container col-rev`}>
         <div className={`${styles.hero_content} row`}>
-          <p className={styles.hero_content_title}>
+          <h1 className={styles.hero_content_title}>
             <span className={styles.hero_title_span}>Hey there! </span>
             <br />
             I'm Girish Chauhan,
-          </p>
+          </h1>
           <p className={styles.hero_content_text}>Front End Web Developer.</p>
           <a href="#contact" className={styles.hero_content_text_btn}>
             Contact Me
